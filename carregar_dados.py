@@ -1,65 +1,57 @@
 import csv
 
 
-def carregar_legenda_terrenos(caminho_arquivo):
-
-    legenda = {}
-
-    with open(caminho_arquivo) as arquivo:
-
-        leitor = csv.reader(arquivo)
-
-        for linha in leitor:
-
-            numero = linha[0]
-            nome = linha[1]
-
-            legenda[numero] = nome
-
-    return legenda
-
-
-def carregar_mapa(caminho_arquivo):
+def carregar_mapa(caminho):
 
     mapa = []
 
-    with open(caminho_arquivo) as arquivo:
+    with open(caminho) as arquivo:
 
         leitor = csv.reader(arquivo)
 
         for linha in leitor:
-            mapa.append([int(valor) for valor in linha])
+            mapa.append([int(v) for v in linha])
 
     return mapa
 
 
-def carregar_dicionario(caminho_arquivo):
+def carregar_dicionario(caminho):
 
     dados = {}
 
-    with open(caminho_arquivo) as arquivo:
+    with open(caminho) as arquivo:
 
         leitor = csv.reader(arquivo)
 
         for linha in leitor:
-
-            chave = linha[0]
-            valor = float(linha[1])
-
-            dados[chave] = valor
+            dados[linha[0]] = float(linha[1])
 
     return dados
 
 
-def carregar_lista(caminho_arquivo):
+def carregar_lista(caminho):
 
     lista = []
 
-    with open(caminho_arquivo) as arquivo:
+    with open(caminho) as arquivo:
 
         leitor = csv.reader(arquivo)
 
         for linha in leitor:
-            lista.append((linha[0], float(linha[1])))
+            lista.append((int(linha[0]), float(linha[1])))
 
     return lista
+
+
+def carregar_legenda_terrenos(caminho):
+
+    legenda = {}
+
+    with open(caminho) as arquivo:
+
+        leitor = csv.reader(arquivo)
+
+        for linha in leitor:
+            legenda[linha[0]] = linha[1]
+
+    return legenda
