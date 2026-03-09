@@ -1,4 +1,96 @@
 
+# 🛡️ Cavaleiros do Zodíaco — Agente de Busca para as 12 Casas
+
+## 📖 Descrição
+
+Durante o torneio da Guerra Galáctica, os Cavaleiros de Bronze descobrem que Saori é a reencarnação da deusa Atena e que o Grande Mestre tentou assassiná-la quando ainda era bebê. Decididos a protegê-la, Seiya, Shiryu, Hyoga, Shun e Ikki partem rumo ao Santuário para enfrentar o Grande Mestre.
+
+Ao chegar ao Santuário, Tremy, um Cavaleiro de Prata, ataca o grupo e acerta Atena com uma flecha mortal.
+
+Para salvá-la, os Cavaleiros precisam:
+
+- Percorrer as 12 Casas do Zodíaco
+- Derrotar os 12 Cavaleiros de Ouro
+- Chegar até a Casa do Grande Mestre
+- Fazer tudo isso em até 12 horas
+
+O objetivo deste projeto é implementar um agente inteligente capaz de planejar automaticamente a melhor estratégia para atravessar as 12 casas e salvar Atena no menor tempo possível.
+
+## 🎯 Objetivo do Projeto
+
+Desenvolver um agente autônomo que:
+
+- Encontre o melhor caminho pelo mapa
+- Planeje quais cavaleiros lutarão em cada batalha
+- Minimize o tempo total da missão
+
+Para isso, deve ser utilizado um algoritmo de busca estudado na disciplina de Inteligência Artificial.
+
+## 🗺️ Mapa das 12 Casas
+
+O mapa do Santuário é representado por uma matriz 42 × 42 contendo diferentes tipos de terreno.
+
+Tipos de terreno:
+
+| Terreno | Custo de tempo |
+|-------|------|
+| Montanhoso | +200 minutos |
+| Plano | +1 minuto |
+| Rochoso | +5 minutos |
+
+Regras de movimentação:
+
+- O agente não pode andar na diagonal
+- Apenas movimentos verticais e horizontais
+- Início: Entrada do Santuário (vermelho)
+- Objetivo final: Casa do Grande Mestre (verde)
+
+## 🏛️ Dificuldade das Casas do Zodíaco
+
+Cada casa possui um nível de dificuldade, que influencia o tempo da batalha.
+
+| Casa | Dificuldade |
+|----|----|
+| Áries | 50 |
+| Touro | 55 |
+| Gêmeos | 60 |
+| Câncer | 70 |
+| Leão | 75 |
+| Virgem | 80 |
+| Libra | 85 |
+| Escorpião | 90 |
+| Sagitário | 95 |
+| Capricórnio | 100 |
+| Aquário | 110 |
+| Peixes | 120 |
+
+## ⚡ Cavaleiros de Bronze
+
+Cada cavaleiro possui um poder cósmico, que influencia o tempo de batalha.
+
+| Cavaleiro | Poder Cósmico |
+|----|----|
+| Seiya | 1.5 |
+| Shiryu | 1.4 |
+| Hyoga | 1.3 |
+| Shun | 1.2 |
+| Ikki | 1.1 |
+
+Todos os cavaleiros começam com:
+
+- 5 pontos de energia
+
+Regras:
+
+- Cada batalha consome 1 ponto de energia
+- Se a energia chegar a 0, o cavaleiro morre
+
+## ⏱️ Tempo das Batalhas
+
+O tempo para derrotar um Cavaleiro de Ouro é calculado por:
+
+Tempo = Dificuldade da Casa / (Soma do poder cósmico dos cavaleiros participantes)
+
 Quanto mais cavaleiros participarem da batalha, menor será o tempo necessário.
 
 ## 🧠 Problemas a Resolver
